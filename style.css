@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --themeSelectionWidth: 6vw;
+    --themeSelectionHeight: 5vh;
+    --ballWidth: calc(0.9 * var(--themeSelectionHeight));
+    --ballHeight: calc(0.9 * var(--themeSelectionHeight));
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 5vh auto;
+}
+
+body.dark {
+    background-color: #181818;
+    color: white;
+}
+
+#personalization {
+    position: fixed;
+    top: 2vh;
+    right: 2vw;
+    height: 5vh;
+}
+
+#themeSelection {
+    width: var(--themeSelectionWidth);
+    height: var(--themeSelectionHeight);
+    background-color: #000000;
+    padding: 10px;
+    border-radius: var(--themeSelectionWidth);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#themeSelection .ball {
+    position: absolute;
+    width: var(--ballWidth);
+    height: var(--ballHeight);
+    background-color: #fff;
+    border-radius: 50%;
+    transition: .3s;
+    transform: translateX(0px);
+}
+
+#themeSelection .ball.dark {
+    transform: translateX(calc(var(--themeSelectionWidth) / 2 - 5px));
+}
+
+.fa-moon {
+    font-size: calc(var(--themeSelectionHeight) * 0.7);
+    color: #f1c40f;
+}
+
+.fa-sun {
+    font-size: calc(var(--themeSelectionHeight) * 0.7);
+    color: #f39c12;
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    left: calc(50% - ((75vw + 20px) / 2));
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+nav div {
+    width: 15vw;
+    height: 10vh;
+    text-align: center;
+    font-size: 4vh;
+    line-height: 10vh;
+    background-color: rgb(235, 235, 235);
+    user-select: none;
+}
+
+nav div:nth-child(1) {
+    text-decoration: underline;
+    background-color: rgb(205, 205, 205);
+}
+
+nav div:hover {
+    background-color: rgb(205, 205, 205);
+    cursor: pointer;
+}
+
+nav div.dark {
+    background-color: rgb(42, 40, 40);
+    /*background-color: rgb(200, 200, 200);*/
+}
+
+#visualization {
+    position: relative;
+    left: calc(50% - 48vw);
+    width: 96vw;
+    height: 45vh;
+    border-radius: 30px;
+    background-color: #f5f5f5;
+}
+
+#visualization.dark {
+    background-color: #797c75;
+}
+
+#data {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+    user-select: none;
+}
+
+.dataToSort {
+    /*position: absolute;*/
+    float: left;
+    bottom: 10vh;
+    width: 20px;
+    background-color: #da1e1e;
+    border: black solid 1px;
+}
+
+
+#buttons {
+    position: relative;
+    top: 6vh;
+    text-align: center;
+}
+
+#sort, #generateData {
+    width: 10vw;
+    height: 5vh;
+    background-color: rgb(235, 235, 235);
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+}
+
+#buttons > *:hover {
+    background-color: rgb(225, 225, 225);
+    cursor: pointer;
+}
+
